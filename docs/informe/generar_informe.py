@@ -1,6 +1,6 @@
 """Completa la plantilla de la UTPL con los entregables de las actividades 1, 2 y 3.
 
-Uso:  python docs/informe/generar_informe.py <url_vercel>
+Uso:  python docs/informe/generar_informe.py
 """
 import sys
 from pathlib import Path
@@ -14,7 +14,6 @@ from docx.shared import Cm, Pt, RGBColor
 
 RAIZ = Path(__file__).resolve().parents[2]
 IMG = RAIZ / "docs" / "diagramas"
-CAP = RAIZ / "docs" / "capturas"
 PLANTILLA = RAIZ / "docs" / "informe" / "plantilla.docx"
 SALIDA = RAIZ / "docs" / "informe" / "Tarea_MVC_CiudadanIA_Jhonatan_Jara.docx"
 
@@ -23,7 +22,7 @@ FECHA = "17 de noviembre de 2026"
 ANIO = "2026"
 ENTREGA = "Entrega 1"
 REPO = "https://github.com/jhonatanJJ2006/fundamentos---software"
-URL_APP = sys.argv[1] if len(sys.argv) > 1 else "(pendiente de despliegue)"
+URL_APP = "https://fundamentos-software.vercel.app/es/portafolios"
 
 AZUL = RGBColor(0x08, 0x3D, 0x77)
 d = docx.Document(PLANTILLA)
@@ -303,22 +302,7 @@ c.tabla(
     anchos=[3.2, 6.4, 6.4],
 )
 
-capturas = [
-    ("01-portafolios-escritorio.png", "Figura 8. RF02 – Lista de portafolios con número de formularios (1366 px)."),
-    ("02-formulario-detalle.png", "Figura 9. RF06 – Detalle de formulario con preguntas en orden."),
-    ("03-validaciones.png", "Figura 10. RNF03 – Mensajes de validación."),
-    ("04-ingles.png", "Figura 11. RNF01 – Interfaz en inglés."),
-    ("05-acceso-denegado.png", "Figura 12. RNF02 – Participante intentando eliminar: acceso denegado."),
-    ("06-movil-360.png", "Figura 13. RNF04 – Vista móvil a 360 px."),
-]
-existentes = [(f, t) for f, t in capturas if (CAP / f).exists()]
-if existentes:
-    c.titulo("3.6 Capturas de la aplicación")
-    for f, t in existentes:
-        ancho = Cm(6) if "movil" in f else ANCHO
-        c.imagen(CAP / f, t, ancho=ancho)
-
-c.titulo("3.7 Exposición")
+c.titulo("3.6 Exposición")
 c.parrafo("La solución se expone en la clase del 17 de noviembre de 2026 mostrando: los diagramas en Enterprise Architect, "
           "el recorrido del CRUD en la aplicación desplegada (RF01–RF12) y las pruebas de los cuatro RNF descritas arriba.")
 
