@@ -1,0 +1,97 @@
+// CiudadanIA – Módulo de Gestión de Formularios
+// Persistencia del MODELO (PostgreSQL en Neon)
+
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "rhel-openssl-3.0.x"]
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DATABASE_URL_UNPOOLED")
+}
+
+enum Rol {
+  INVESTIGADOR
+  PARTICIPANTE
+  REVISOR
+  ADMINISTRADOR
+}
+
+enum EstadoFormulario {
+  BORRADOR
+  PUBLICADO
+  CERRADO
+}
+
+enum TipoPregunta {
+  OPCION_MULTIPLE
+  TEXTO
+  SI_NO
+  UBICACION_GPS
+  IMAGEN
+}
+
+model Usuario {
+  id          String       @id @default(cuid())
+  nombre      String
+  correo      String       @unique
+  rol         Rol
+  portafolios Portafolio[]
+}
+
+model Portafolio {
+  id            String       @id @default(cuid())
+  nombre        String       @unique @db.VarChar(100)
+  descripcion   String       @default("") @db.VarChar(500)
+  fechaCreacion DateTime     @default(now())
+  creadorId     String
+  creador       Usuario      @relation(fields: [creadorId], references: [id])
+  formularios   Formulario[]
+}
+
+model Formulario {
+  id             String           @id @default(cuid())
+  titulo         String           @db.VarChar(150)
+  descripcion    String           @db.VarChar(1000)
+  consentimiento String           @db.Text
+  estado         EstadoFormulario @default(BORRADOR)
+  fechaCreacion  DateTime         @default(now())
+  portafolioId   String
+  portafolio     Portafolio       @relation(fields: [portafolioId], references: [id], onDelete: Restrict)
+  preguntas      Pregunta[]
+  reportes       Reporte[]
+
+  @@index([portafolioId, estado])
+}
+
+model Pregunta {
+  id           String       @id @default(cuid())
+  enunciado    String       @db.VarChar(300)
+  tipo         TipoPregunta
+  orden        Int
+  obligatoria  Boolean      @default(false)
+  formularioId String
+  formulario   Formulario   @relation(fields: [formularioId], references: [id], onDelete: Cascade)
+  opciones     Opcion[]
+
+  @@index([formularioId, orden])
+}
+
+model Opcion {
+  id         String   @id @default(cuid())
+  texto      String   @db.VarChar(150)
+  orden      Int
+  preguntaId String
+  pregunta   Pregunta @relation(fields: [preguntaId], references: [id], onDelete: Cascade)
+}
+
+// Fuera del alcance del módulo (lo gestiona el módulo de Reportes).
+// Se incluye solo para aplicar la regla RF08: "un formulario con reportes no se elimina, se cierra".
+model Reporte {
+  id           String     @id @default(cuid())
+  fechaEnvio   DateTime   @default(now())
+  formularioId String
+  formulario   Formulario @relation(fields: [formularioId], references: [id], onDelete: Restrict)
+}

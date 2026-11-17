@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+/* Paleta de CiudadanIA (tokens usados por las vistas). */
+@theme {
+  --color-primario: #0b5cab;
+  --color-primario-oscuro: #083d77;
+  --color-tinta: #14213d;
+  --color-tenue: #5b6475;
+  --color-borde: #d9dee7;
+  --color-fondo: #f3f5f9;
+  --color-exito: #15803d;
+  --color-peligro: #c0262d;
+  --color-aviso: #f2b632;
+  --color-aviso-oscuro: #8a5a00;
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--color-fondo);
+  color: var(--color-tinta);
+  overflow-x: hidden; /* RNF04: sin desplazamiento horizontal */
+}
+
+dialog::backdrop {
+  background: rgb(20 33 61 / 0.5);
+}

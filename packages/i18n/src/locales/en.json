@@ -1,0 +1,202 @@
+{
+  "app": {
+    "nombre": "CiudadanIA",
+    "modulo": "Form Management",
+    "descripcion": "UTPL citizen-science platform: module where researchers manage portfolios, forms and questions.",
+    "pie": "CiudadanIA · UTPL community outreach project · Software Engineering Fundamentals"
+  },
+  "encabezado": {
+    "idioma": "Language",
+    "usuarioSimulado": "Signed-in user (simulated)",
+    "avisoSoloLectura": "You are browsing as {rol}: you can view, but not create, edit or delete."
+  },
+  "idiomas": { "es": "Spanish", "en": "English" },
+  "roles": {
+    "INVESTIGADOR": "Researcher",
+    "PARTICIPANTE": "Participant",
+    "REVISOR": "Reviewer",
+    "ADMINISTRADOR": "Administrator"
+  },
+  "estados": { "BORRADOR": "Draft", "PUBLICADO": "Published", "CERRADO": "Closed" },
+  "tipos": {
+    "OPCION_MULTIPLE": "Multiple choice",
+    "TEXTO": "Text",
+    "SI_NO": "Yes / No",
+    "UBICACION_GPS": "GPS location",
+    "IMAGEN": "Image"
+  },
+  "comun": {
+    "cancelar": "Cancel",
+    "guardar": "Save",
+    "guardando": "Saving…",
+    "buscar": "Search",
+    "limpiar": "Clear",
+    "editar": "Edit",
+    "eliminar": "Delete",
+    "siEliminar": "Yes, delete",
+    "migas": "Breadcrumb",
+    "volver": "Back",
+    "irInicio": "Go to portfolios"
+  },
+  "exito": {
+    "portafolioCreado": "The portfolio was created successfully.",
+    "portafolioModificado": "Portfolio changes were saved.",
+    "portafolioEliminado": "The portfolio was deleted.",
+    "formularioCreado": "The form was created as a Draft. Now add its questions.",
+    "formularioModificado": "Form details were saved.",
+    "formularioEliminado": "The form was deleted.",
+    "formularioCerradoPorReportes": "The form has reports, so it was not deleted: it was marked as Closed.",
+    "formularioPublicado": "The form was published. Its questions can no longer be changed.",
+    "formularioCerrado": "The form was closed.",
+    "preguntaAgregada": "The question was added.",
+    "preguntaModificada": "The question was updated.",
+    "preguntaEliminada": "The question was deleted and the rest were reordered."
+  },
+  "portafolio": {
+    "etiqueta": "Portfolio",
+    "nuevo": "New portfolio",
+    "nuevoAyuda": "Groups forms on the same topic, e.g. “Safe mobility”.",
+    "editar": "Edit portfolio",
+    "sinDescripcion": "No description.",
+    "totalFormularios": "Forms: {total}",
+    "campos": {
+      "nombre": "Name",
+      "nombrePlaceholder": "e.g. Safe mobility",
+      "descripcion": "Description",
+      "descripcionPlaceholder": "Which topics does this portfolio group?",
+      "formularios": "Number of forms",
+      "fechaCreacion": "Created on"
+    },
+    "lista": {
+      "titulo": "Portfolios",
+      "subtitulo": "Organize your citizen-science forms by topic.",
+      "buscar": "Search portfolio by name",
+      "buscarPlaceholder": "Search by name…",
+      "resultados": "{total} result(s) for “{q}”",
+      "sinResultados": "No portfolio matches your search.",
+      "vacio": "There are no portfolios yet.",
+      "vacioAyuda": "Create the first one to start designing forms."
+    },
+    "eliminar": {
+      "titulo": "Delete portfolio?",
+      "mensaje": "“{nombre}” will be deleted. This action cannot be undone.",
+      "mensajeConFormularios": "This portfolio contains {total} form(s) and cannot be deleted until it is empty."
+    }
+  },
+  "formulario": {
+    "etiqueta": "Form",
+    "nuevo": "New form",
+    "nuevoAyuda": "The form is created as a Draft; then you can add its questions.",
+    "editar": "Edit form",
+    "editarDatos": "Edit details",
+    "avisoSoloDatos": "This form is not a Draft: you can change its details, but not its questions.",
+    "estructuraBloqueadaInfo": "The form is {estado}: its questions cannot be added, edited or deleted.",
+    "totalPreguntas": "Questions: {total}",
+    "totalReportes": "Reports: {total}",
+    "campos": {
+      "titulo": "Title",
+      "tituloPlaceholder": "e.g. Pothole report in my neighborhood",
+      "descripcion": "Description",
+      "descripcionPlaceholder": "Tell participants what this form is for.",
+      "consentimiento": "Informed consent",
+      "consentimientoPlaceholder": "Text the participant must accept before answering.",
+      "fechaCreacion": "Created"
+    },
+    "lista": {
+      "titulo": "Forms",
+      "filtrar": "Filter by status",
+      "todos": "All",
+      "sinEstado": "There are no forms with status {estado}.",
+      "vacio": "This portfolio has no forms yet."
+    },
+    "eliminar": {
+      "titulo": "Delete form?",
+      "mensaje": "“{titulo}” and all its questions will be deleted. Only possible while it is a Draft.",
+      "tituloCerrar": "Close form?",
+      "mensajeConReportes": "This form already has {total} report(s). To protect the data it will not be deleted: it will be marked as Closed.",
+      "confirmarCerrar": "Yes, close it"
+    },
+    "estado": {
+      "publicar": "Publish",
+      "publicarTitulo": "Publish form?",
+      "publicarMensaje": "Participants will be able to answer it and you will no longer be able to change its questions. It cannot return to Draft.",
+      "cerrar": "Close form",
+      "cerrarTitulo": "Close form?",
+      "cerrarMensaje": "It will stop receiving answers. It cannot return to Draft or Published."
+    }
+  },
+  "pregunta": {
+    "nueva": "Add question",
+    "editar": "Edit question",
+    "numero": "Question #{orden}",
+    "obligatoria": "Required",
+    "opcional": "Optional",
+    "agregarOpcion": "Add option",
+    "quitarOpcion": "Remove option {n}",
+    "campos": {
+      "enunciado": "Question text",
+      "enunciadoPlaceholder": "e.g. What kind of problem do you see?",
+      "tipo": "Question type",
+      "orden": "Order",
+      "ordenAyuda": "Position between 1 and {max}. The other questions are reordered automatically.",
+      "obligatoria": "Answer required",
+      "opciones": "Options",
+      "opcionesAyuda": "Multiple-choice questions need at least 2 options.",
+      "opcionPlaceholder": "Option {n}"
+    },
+    "lista": {
+      "titulo": "Questions ({total})",
+      "vacio": "This form has no questions yet.",
+      "vacioAyuda": "It needs at least one question before it can be published."
+    },
+    "eliminar": {
+      "titulo": "Delete question?",
+      "mensaje": "Question #{orden} will be deleted and the rest will be reordered."
+    }
+  },
+  "errores": {
+    "acceso": {
+      "denegado": "Access denied: only a user with the Researcher role can create, edit or delete."
+    },
+    "general": {
+      "revisarCampos": "Please review the highlighted fields.",
+      "inesperado": "An unexpected error occurred. Please try again.",
+      "noEncontrado": "We couldn't find what you're looking for.",
+      "noEncontradoAyuda": "It may have been deleted."
+    },
+    "portafolio": {
+      "nombreObligatorio": "The portfolio name is required.",
+      "nombreLargo": "The name cannot exceed {max} characters.",
+      "nombreDuplicado": "A portfolio named “{nombre}” already exists. The name must be unique.",
+      "descripcionLarga": "The description cannot exceed {max} characters.",
+      "tieneFormularios": "It cannot be deleted: the portfolio contains {total} form(s).",
+      "noEncontrado": "The portfolio does not exist."
+    },
+    "formulario": {
+      "tituloObligatorio": "The title is required.",
+      "tituloLargo": "The title cannot exceed {max} characters.",
+      "descripcionObligatoria": "The description is required.",
+      "descripcionLarga": "The description cannot exceed {max} characters.",
+      "consentimientoObligatorio": "The informed consent text is required.",
+      "consentimientoLargo": "The consent text cannot exceed {max} characters.",
+      "estadoInvalido": "The requested status is not valid.",
+      "estructuraBloqueada": "The form is Published or Closed: its questions cannot be added, edited or deleted.",
+      "transicionInvalida": "Status change not allowed. A form can only go from Draft to Published and from Published to Closed.",
+      "publicarSinPreguntas": "A form without questions cannot be published. Add at least one.",
+      "soloBorradorSeElimina": "Only Draft forms can be deleted. A published form must be closed.",
+      "noEncontrado": "The form does not exist."
+    },
+    "pregunta": {
+      "enunciadoObligatorio": "The question text is required.",
+      "enunciadoLargo": "The question text cannot exceed {max} characters.",
+      "tipoInvalido": "Select a valid question type.",
+      "minimoOpciones": "A multiple-choice question must have at least {min} options.",
+      "noEncontrada": "The question does not exist."
+    },
+    "opcion": {
+      "textoObligatorio": "No option can be left empty.",
+      "textoLargo": "Each option allows at most {max} characters.",
+      "duplicada": "Options cannot be repeated."
+    }
+  }
+}

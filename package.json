@@ -1,0 +1,22 @@
+{
+  "name": "ciudadania",
+  "private": true,
+  "description": "CiudadanIA – Módulo de Gestión de Formularios (MVC) · UTPL Fundamentos de Ingeniería de Software",
+  "packageManager": "pnpm@10.14.0",
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "test": "turbo run test",
+    "typecheck": "turbo run typecheck",
+    "db:migrate": "pnpm --filter @ciudadania/db migrate:dev",
+    "db:deploy": "pnpm --filter @ciudadania/db migrate:deploy",
+    "db:seed": "pnpm --filter @ciudadania/db seed"
+  },
+  "devDependencies": {
+    "turbo": "2.5.8",
+    "typescript": "5.9.3"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": ["@prisma/client", "@prisma/engines", "prisma", "esbuild", "@tailwindcss/oxide", "sharp"]
+  }
+}

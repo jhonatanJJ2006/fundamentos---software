@@ -1,0 +1,202 @@
+{
+  "app": {
+    "nombre": "CiudadanIA",
+    "modulo": "Gestión de Formularios",
+    "descripcion": "Plataforma de ciencia ciudadana de la UTPL: módulo para que el investigador gestione portafolios, formularios y preguntas.",
+    "pie": "CiudadanIA · Proyecto de vinculación UTPL · Fundamentos de Ingeniería de Software"
+  },
+  "encabezado": {
+    "idioma": "Idioma",
+    "usuarioSimulado": "Usuario en sesión (simulado)",
+    "avisoSoloLectura": "Estás navegando como {rol}: puedes consultar, pero no crear, modificar ni eliminar."
+  },
+  "idiomas": { "es": "Español", "en": "Inglés" },
+  "roles": {
+    "INVESTIGADOR": "Investigador",
+    "PARTICIPANTE": "Participante",
+    "REVISOR": "Revisor",
+    "ADMINISTRADOR": "Administrador"
+  },
+  "estados": { "BORRADOR": "Borrador", "PUBLICADO": "Publicado", "CERRADO": "Cerrado" },
+  "tipos": {
+    "OPCION_MULTIPLE": "Opción múltiple",
+    "TEXTO": "Texto",
+    "SI_NO": "Sí / No",
+    "UBICACION_GPS": "Ubicación GPS",
+    "IMAGEN": "Imagen"
+  },
+  "comun": {
+    "cancelar": "Cancelar",
+    "guardar": "Guardar",
+    "guardando": "Guardando…",
+    "buscar": "Buscar",
+    "limpiar": "Limpiar",
+    "editar": "Editar",
+    "eliminar": "Eliminar",
+    "siEliminar": "Sí, eliminar",
+    "migas": "Ruta de navegación",
+    "volver": "Volver",
+    "irInicio": "Ir a portafolios"
+  },
+  "exito": {
+    "portafolioCreado": "El portafolio se registró correctamente.",
+    "portafolioModificado": "Los cambios del portafolio se guardaron.",
+    "portafolioEliminado": "El portafolio se eliminó.",
+    "formularioCreado": "El formulario se creó en estado Borrador. Agrega sus preguntas.",
+    "formularioModificado": "Los datos del formulario se guardaron.",
+    "formularioEliminado": "El formulario se eliminó.",
+    "formularioCerradoPorReportes": "El formulario tiene reportes, por eso no se eliminó: se marcó como Cerrado.",
+    "formularioPublicado": "El formulario fue publicado. Ya no se pueden modificar sus preguntas.",
+    "formularioCerrado": "El formulario fue cerrado.",
+    "preguntaAgregada": "La pregunta se agregó.",
+    "preguntaModificada": "La pregunta se actualizó.",
+    "preguntaEliminada": "La pregunta se eliminó y las demás se reordenaron."
+  },
+  "portafolio": {
+    "etiqueta": "Portafolio",
+    "nuevo": "Nuevo portafolio",
+    "nuevoAyuda": "Agrupa formularios de un mismo tema, por ejemplo «Movilidad segura».",
+    "editar": "Modificar portafolio",
+    "sinDescripcion": "Sin descripción.",
+    "totalFormularios": "Formularios: {total}",
+    "campos": {
+      "nombre": "Nombre",
+      "nombrePlaceholder": "Ej.: Movilidad segura",
+      "descripcion": "Descripción",
+      "descripcionPlaceholder": "¿Qué temas agrupa este portafolio?",
+      "formularios": "Número de formularios",
+      "fechaCreacion": "Fecha de creación"
+    },
+    "lista": {
+      "titulo": "Portafolios",
+      "subtitulo": "Organiza tus formularios de ciencia ciudadana por tema.",
+      "buscar": "Buscar portafolio por nombre",
+      "buscarPlaceholder": "Buscar por nombre…",
+      "resultados": "{total} resultado(s) para «{q}»",
+      "sinResultados": "Ningún portafolio coincide con la búsqueda.",
+      "vacio": "Aún no hay portafolios.",
+      "vacioAyuda": "Crea el primero para empezar a diseñar formularios."
+    },
+    "eliminar": {
+      "titulo": "¿Eliminar portafolio?",
+      "mensaje": "Se eliminará «{nombre}». Esta acción no se puede deshacer.",
+      "mensajeConFormularios": "Este portafolio contiene {total} formulario(s) y no podrá eliminarse hasta que esté vacío."
+    }
+  },
+  "formulario": {
+    "etiqueta": "Formulario",
+    "nuevo": "Nuevo formulario",
+    "nuevoAyuda": "El formulario se crea en estado Borrador; luego podrás agregar sus preguntas.",
+    "editar": "Modificar formulario",
+    "editarDatos": "Editar datos",
+    "avisoSoloDatos": "Este formulario no está en Borrador: puedes cambiar sus datos, pero no sus preguntas.",
+    "estructuraBloqueadaInfo": "El formulario está {estado}: sus preguntas no se pueden agregar, editar ni eliminar.",
+    "totalPreguntas": "Preguntas: {total}",
+    "totalReportes": "Reportes: {total}",
+    "campos": {
+      "titulo": "Título",
+      "tituloPlaceholder": "Ej.: Reporte de baches en mi barrio",
+      "descripcion": "Descripción",
+      "descripcionPlaceholder": "Explica al participante para qué sirve este formulario.",
+      "consentimiento": "Consentimiento informado",
+      "consentimientoPlaceholder": "Texto que el participante debe aceptar antes de responder.",
+      "fechaCreacion": "Creado"
+    },
+    "lista": {
+      "titulo": "Formularios",
+      "filtrar": "Filtrar por estado",
+      "todos": "Todos",
+      "sinEstado": "No hay formularios en estado {estado}.",
+      "vacio": "Este portafolio todavía no tiene formularios."
+    },
+    "eliminar": {
+      "titulo": "¿Eliminar formulario?",
+      "mensaje": "Se eliminará «{titulo}» con todas sus preguntas. Solo es posible si está en Borrador.",
+      "tituloCerrar": "¿Cerrar formulario?",
+      "mensajeConReportes": "Este formulario ya tiene {total} reporte(s). Para proteger los datos no se eliminará: se marcará como Cerrado.",
+      "confirmarCerrar": "Sí, cerrar"
+    },
+    "estado": {
+      "publicar": "Publicar",
+      "publicarTitulo": "¿Publicar formulario?",
+      "publicarMensaje": "Los participantes podrán responderlo y ya no podrás modificar sus preguntas. No se puede volver a Borrador.",
+      "cerrar": "Cerrar formulario",
+      "cerrarTitulo": "¿Cerrar formulario?",
+      "cerrarMensaje": "Dejará de recibir respuestas. No se puede volver a Borrador ni a Publicado."
+    }
+  },
+  "pregunta": {
+    "nueva": "Agregar pregunta",
+    "editar": "Modificar pregunta",
+    "numero": "Pregunta n.º {orden}",
+    "obligatoria": "Obligatoria",
+    "opcional": "Opcional",
+    "agregarOpcion": "Agregar opción",
+    "quitarOpcion": "Quitar opción {n}",
+    "campos": {
+      "enunciado": "Enunciado",
+      "enunciadoPlaceholder": "Ej.: ¿Qué tipo de problema observa?",
+      "tipo": "Tipo de pregunta",
+      "orden": "Orden",
+      "ordenAyuda": "Posición entre 1 y {max}. Las demás preguntas se reordenan solas.",
+      "obligatoria": "Respuesta obligatoria",
+      "opciones": "Opciones",
+      "opcionesAyuda": "Las preguntas de opción múltiple necesitan al menos 2 opciones.",
+      "opcionPlaceholder": "Opción {n}"
+    },
+    "lista": {
+      "titulo": "Preguntas ({total})",
+      "vacio": "Este formulario aún no tiene preguntas.",
+      "vacioAyuda": "Necesita al menos una pregunta para poder publicarse."
+    },
+    "eliminar": {
+      "titulo": "¿Eliminar pregunta?",
+      "mensaje": "Se eliminará la pregunta n.º {orden} y las restantes se reordenarán."
+    }
+  },
+  "errores": {
+    "acceso": {
+      "denegado": "Acceso denegado: solo un usuario con rol Investigador puede crear, modificar o eliminar."
+    },
+    "general": {
+      "revisarCampos": "Revisa los campos marcados.",
+      "inesperado": "Ocurrió un error inesperado. Inténtalo de nuevo.",
+      "noEncontrado": "No encontramos lo que buscas.",
+      "noEncontradoAyuda": "Es posible que haya sido eliminado."
+    },
+    "portafolio": {
+      "nombreObligatorio": "El nombre del portafolio es obligatorio.",
+      "nombreLargo": "El nombre no puede superar {max} caracteres.",
+      "nombreDuplicado": "Ya existe un portafolio llamado «{nombre}». El nombre debe ser único.",
+      "descripcionLarga": "La descripción no puede superar {max} caracteres.",
+      "tieneFormularios": "No se puede eliminar: el portafolio contiene {total} formulario(s).",
+      "noEncontrado": "El portafolio no existe."
+    },
+    "formulario": {
+      "tituloObligatorio": "El título es obligatorio.",
+      "tituloLargo": "El título no puede superar {max} caracteres.",
+      "descripcionObligatoria": "La descripción es obligatoria.",
+      "descripcionLarga": "La descripción no puede superar {max} caracteres.",
+      "consentimientoObligatorio": "El texto de consentimiento informado es obligatorio.",
+      "consentimientoLargo": "El consentimiento no puede superar {max} caracteres.",
+      "estadoInvalido": "El estado indicado no es válido.",
+      "estructuraBloqueada": "El formulario está Publicado o Cerrado: no se pueden agregar, editar ni eliminar sus preguntas.",
+      "transicionInvalida": "Cambio de estado no permitido. Solo se puede pasar de Borrador a Publicado y de Publicado a Cerrado.",
+      "publicarSinPreguntas": "No se puede publicar un formulario sin preguntas. Agrega al menos una.",
+      "soloBorradorSeElimina": "Solo se pueden eliminar formularios en Borrador. Un formulario publicado debe cerrarse.",
+      "noEncontrado": "El formulario no existe."
+    },
+    "pregunta": {
+      "enunciadoObligatorio": "El enunciado es obligatorio.",
+      "enunciadoLargo": "El enunciado no puede superar {max} caracteres.",
+      "tipoInvalido": "Selecciona un tipo de pregunta válido.",
+      "minimoOpciones": "Una pregunta de opción múltiple debe tener al menos {min} opciones.",
+      "noEncontrada": "La pregunta no existe."
+    },
+    "opcion": {
+      "textoObligatorio": "Ninguna opción puede quedar vacía.",
+      "textoLargo": "Cada opción admite como máximo {max} caracteres.",
+      "duplicada": "Las opciones no pueden repetirse."
+    }
+  }
+}
